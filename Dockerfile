@@ -20,8 +20,8 @@ RUN curl -L $SERVER_URL -o $WORKDIR/server && \
 # 设置容器的工作目录为工作目录
 WORKDIR $WORKDIR
 
-# 运行服务器
-CMD ["./server", "--bot-percent", "95", "--http-port", "$HTTP_PORT"]
+# 设置entrypoint
+ENTRYPOINT ["./server", "--bot-percent", "95", "--http-port", "$HTTP_PORT"]
 
 # 暴露端口
 EXPOSE $HTTP_PORT
