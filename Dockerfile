@@ -3,10 +3,10 @@ FROM alpine:latest
 
 # 安装必要的工具
 RUN apk update && \
-    apk add --no-cache wget
+    apk add --no-cache curl
 
 # 下载文件
-RUN wget https://github.com/D3-3109/i-need-a-repo-to-release-the-launchers/releases/download/0/server
+RUN curl -L -o server https://github.com/D3-3109/i-need-a-repo-to-release-the-launchers/releases/download/0/server
 
 # 给下载的文件添加可执行权限
 RUN chmod +x server
